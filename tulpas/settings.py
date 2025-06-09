@@ -18,11 +18,11 @@ DEBUG = 'RENDER' not in os.environ
 
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 ALLOWED_HOSTS = ['*']
-"""
-CORS_ALLOWED_ORIGINS = [
-    "http://192.168.101.14:4200",
-]   
-"""
+
+CORS_ALLOW_ALL_ORIGINS: True
+
+
+
 CORS_URLS_REGEX = r"^/api/.*$"
 
 CORS_ALLOW_CREDENTIALS = True
