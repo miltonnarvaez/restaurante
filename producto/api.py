@@ -26,11 +26,14 @@ from producto.serializers import FacturaEntradaSerializer
 from producto.serializers import SalidaSerializer
 from producto.serializers import FacturaSalidaSerializer
 from producto.serializers import ReportePerdidaSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = ProductoSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['tipo_producto']
 
 class BodegaViewSet(viewsets.ModelViewSet):
     queryset = Bodega.objects.all()
